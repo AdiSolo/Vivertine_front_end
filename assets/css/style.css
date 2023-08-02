@@ -22,6 +22,12 @@ body {
   font-size: 16px;
 }
 
+/* Colors */
+.lock-scroll {
+  height: 100svh;
+  overflow: hidden;
+}
+
 /* Side navigation area */
 .side-nav-container {
   position: sticky;
@@ -125,7 +131,6 @@ body {
   position: relative;
   flex-basis: calc(100% - 194px);
   height: 100svh;
-  background: linear-gradient(360deg, #1b1929 38%, rgba(0, 0, 0, 0) 100%);
   overflow: hidden;
   /* Top bar header */
 }
@@ -183,8 +188,147 @@ body {
   border-radius: 500px;
 }
 
+.fixed-sidebar {
+  height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+}
+.fixed-sidebar .categories-container {
+  height: 70%;
+}
+.fixed-sidebar .categories-container .top {
+  display: flex;
+  justify-content: space-between;
+}
+.fixed-sidebar .categories-container .categories-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  padding: 1rem;
+  gap: 16px;
+  overflow: hidden;
+}
+.fixed-sidebar .categories-container .categories-wrapper .top {
+  font-size: 12px;
+}
+.fixed-sidebar .categories-container .categories-wrapper .top p {
+  color: rgba(255, 255, 255, 0.5);
+}
+.fixed-sidebar .categories-container .categories-wrapper .top a {
+  color: #f6f041;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item {
+  display: flex;
+  height: 84px;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item:hover img {
+  border-radius: 8px;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info {
+  color: #fff;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info .total_count {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+.fixed-sidebar {
+  height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+}
+.fixed-sidebar .categories-container {
+  height: 70%;
+}
+.fixed-sidebar .categories-container .top {
+  display: flex;
+  justify-content: space-between;
+}
+.fixed-sidebar .categories-container .categories-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  padding: 1rem;
+  gap: 16px;
+  overflow: hidden;
+}
+.fixed-sidebar .categories-container .categories-wrapper .top {
+  font-size: 12px;
+}
+.fixed-sidebar .categories-container .categories-wrapper .top p {
+  color: rgba(255, 255, 255, 0.5);
+}
+.fixed-sidebar .categories-container .categories-wrapper .top a {
+  color: #f6f041;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item {
+  display: flex;
+  height: 84px;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item:hover img {
+  border-radius: 8px;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info {
+  color: #fff;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.fixed-sidebar .categories-container .categories-wrapper .category-item .info .total_count {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
 /* Video section styles */
-.video .video-container video {
+.content.video {
+  background: linear-gradient(360deg, #1b1929 38%, rgba(0, 0, 0, 0) 100%);
+}
+.content.video .video-container video {
   position: absolute;
   top: 0;
   left: 0;
@@ -193,6 +337,301 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+
+.content.live-page {
+  background: radial-gradient(96.52% 74.95% at 0% 0%, rgba(253, 184, 21, 0.4) 0%, rgba(253, 184, 21, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #262439;
+}
+
+.content-wrraper {
+  height: calc(100vh - 132px);
+  overflow: hidden;
+  z-index: 2;
+}
+.content-wrraper .wrap-scroll-area {
+  height: 100%;
+  overflow: auto;
+}
+.content-wrraper .wrap-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+.h1,
+.h1.title {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.h2,
+.h2.title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.label {
+  position: relative;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 8px;
+  gap: 4px;
+}
+.label .icon {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.logout-card-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 116px;
+  background: linear-gradient(339deg, #1b1929 0%, rgba(0, 0, 0, 0) 100%), rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: auto;
+}
+.logout-card-container .video video {
+  border-radius: 16px;
+}
+.logout-card-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.logout-card-container .wrapper .created_at p {
+  color: rgba(255, 255, 255, 0.5);
+}
+.logout-card-container .wrapper .created_at .date {
+  display: block;
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 600;
+}
+.logout-card-container .wrapper .logout a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.line-separator-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 8px;
+}
+.line-separator-container .text-label {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  position: relative;
+  font-size: 12px;
+  padding: 4px 16px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+}
+.line-separator-container .separator {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #fff;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  row-gap: 4px;
+}
+.meta .time .icon {
+  background-image: url("../images/clock.svg");
+}
+.meta .instructor .photo {
+  background-image: url("../images/trainer-photo.jpeg");
+  border-radius: 500px;
+}
+.meta .difficulty .icon {
+  background-image: url("../images/level.svg");
+}
+
+.card {
+  display: flex;
+  color: #fff;
+  background: var(--transparent, rgba(255, 255, 255, 0.06));
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card:hover {
+  background: var(--transparent, rgba(255, 255, 255, 0.1));
+}
+.card .date-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  padding-right: 2rem;
+  gap: 8px;
+}
+.card .date-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: #fff;
+  opacity: 0.06;
+}
+.card .date-container .month {
+  color: var(--transparent-3, rgba(255, 255, 255, 0.5));
+}
+.card .date-container .date {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+}
+.card .image {
+  padding: 0 1rem;
+}
+.card .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1rem;
+  gap: 8px;
+}
+.card .button-link {
+  align-self: center;
+  margin-left: auto;
+}
+.card .button-link:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 4.5px);
+  left: calc(50% - 2px);
+  background-image: url(../images/btn-arrow.svg);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+.card.small {
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 24px;
+  border-radius: 16px;
+}
+.card.small .image {
+  padding: 0;
+}
+.card.small .info {
+  padding: 1rem;
+}
+.card.small .flex-wrapper {
+  display: flex;
+}
+
+.card.large {
+  max-height: 427px;
+  padding: 0;
+  border-radius: 16px;
+}
+.card.large .image {
+  flex-basis: 66.6%;
+  padding: 0;
+}
+.card.large .image img {
+  width: 100%;
+  height: 427px;
+  border-radius: 16px 0 0 16px;
+}
+.card.large .info {
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: flex-start;
+  height: 427px;
+  padding: 24px;
+  padding-left: 40px;
+  margin: 0;
+}
+.card.large .info p {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card.large .info .meta {
+  padding: 24px 0;
+}
+.card.large .info .button-link {
+  display: none;
+}
+.card.large .info .rounded_btn {
+  display: inline-flex;
+  max-width: 141px;
+  align-self: self-end;
+  margin-top: auto;
+  background-color: #000;
+}
+
+/* Colors */
+.rounded_btn {
+  display: inline-flex;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 33px;
+  color: #fff;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  margin-top: 24px;
+  padding: 8px 24px;
+}
+
+.button-link {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.button-link:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 4.5px);
+  left: calc(50% - 2px);
+  background-image: url(../images/btn-arrow.svg);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
 }
 
 .app-container .wrapper {
@@ -217,11 +656,6 @@ body {
   height: 100px;
   z-index: 1010; /* higher than header and content */
 }
-.app-container .wrapper .content .user-welcome .h2 {
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-}
 .app-container .wrapper .content .user-welcome p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
@@ -231,20 +665,14 @@ body {
   padding: 1rem 2rem;
   position: relative;
   z-index: 0;
+  /*  Content Wrapper */
+  /* Calendar Home Container */
+  /* End Calendar Home Container */
+  /* End Content Wrapper */
+  /* Live sesions Page CSS */
+  /* Live sesions Page CSS */
 }
-.app-container .wrapper .content .content-container .content-wrraper {
-  height: calc(100vh - 132px);
-  overflow: hidden;
-  z-index: 2;
-}
-.app-container .wrapper .content .content-container .content-wrraper .wrap-scroll-area {
-  height: 100%;
-  overflow: auto;
-}
-.app-container .wrapper .content .content-container .content-wrraper .wrap-scroll-area::-webkit-scrollbar {
-  display: none;
-}
-.app-container .wrapper .content .content-container .content-wrraper .blog-section-container .slider .post {
+.app-container .wrapper .content .content-container .blog-section-container .slider .post {
   display: flex;
   width: 100%;
   height: 264px;
@@ -257,277 +685,25 @@ body {
   background-size: cover;
   padding: 24px;
 }
-.app-container .wrapper .content .content-container .content-wrraper .blog-section-container .slider .post .details {
+.app-container .wrapper .content .content-container .blog-section-container .slider .post .details {
   display: block;
   width: 54%;
 }
-.app-container .wrapper .content .content-container .content-wrraper .blog-section-container .slider .post .details .title {
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.app-container .wrapper .content .content-container .content-wrraper .blog-section-container .slider .post .details p {
+.app-container .wrapper .content .content-container .blog-section-container .slider .post .details p {
   color: rgba(0, 0, 0, 0.4);
 }
-.app-container .wrapper .content .content-container .content-wrraper .blog-section-container .slider .post .details .btn {
-  display: flex;
-  max-width: 139px;
-  height: 33px;
-  color: #fff;
-  font-size: 14px;
-  justify-content: center;
-  align-items: center;
+.app-container .wrapper .content .content-container .blog-section-container .slider .post .details .rounded_btn {
   background-color: #000;
-  border-radius: 100px;
-  margin-top: 24px;
 }
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container {
+.app-container .wrapper .content .content-container .calendar-container {
   margin-top: 32px;
 }
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings {
+.app-container .wrapper .content .content-container .calendar-container .calendar-listings {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .day-separator-container {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0;
-  gap: 8px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .day-separator-container .day-separator {
-  max-width: 65px;
-  position: relative;
-  font-size: 12px;
-  padding: 4px 16px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 100px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .day-separator-container .separator {
-  display: flex;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class {
-  display: flex;
-  color: #fff;
+.app-container .wrapper .content .content-container .calendar-container .calendar-listings .card.class {
   min-height: 119px;
   border-radius: 20px;
-  background: var(--transparent, rgba(255, 255, 255, 0.06));
-  padding: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class:hover {
-  background: var(--transparent, rgba(255, 255, 255, 0.1));
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .date-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  padding-right: 2rem;
-  gap: 8px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .date-container::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1px;
-  height: 100%;
-  background: #fff;
-  opacity: 0.06;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .date-container .month {
-  color: var(--transparent-3, rgba(255, 255, 255, 0.5));
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .date-container .date {
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .image {
-  padding: 0 1rem;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 8px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 1rem;
-  gap: 8px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .title {
-  font-size: 20px;
-  font-weight: 500;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta .label {
-  position: relative;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 8px;
-  gap: 4px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta .label .icon {
-  width: 1rem;
-  height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta .time .icon {
-  background-image: url("../images/clock.svg");
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta .instructor .photo {
-  background-image: url("../images/trainer-photo.jpeg");
-  border-radius: 500px;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .info .meta .difficulty .icon {
-  background-image: url("../images/level.svg");
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .button-link {
-  position: relative;
-  display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.06);
-  align-self: center;
-  margin-left: auto;
-}
-.app-container .wrapper .content .content-container .content-wrraper .calendar-container .calendar-listings .class .button-link:before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 4.5px);
-  left: calc(50% - 2px);
-  background-image: url(../images/btn-arrow.svg);
-  background-repeat: no-repeat;
-  width: 32px;
-  height: 32px;
-}
-.app-container .wrapper .content .fixed-sidebar {
-  height: calc(100vh - 132px);
-  display: flex;
-  flex-direction: column;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container {
-  height: 70%;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .top {
-  display: flex;
-  justify-content: space-between;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  border-radius: 16px;
-  background: var(--transparent, rgba(255, 255, 255, 0.06));
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
-  padding: 1rem;
-  gap: 16px;
-  overflow: hidden;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .top {
-  font-size: 12px;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .top p {
-  color: rgba(255, 255, 255, 0.5);
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .top a {
-  color: #f6f041;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item {
-  display: flex;
-  height: 84px;
-  padding: 12px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  cursor: pointer;
-  transition: 0.3s;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item:hover {
-  background: rgba(255, 255, 255, 0.13);
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item:hover img {
-  border-radius: 8px;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item .info {
-  color: #fff;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item .info .name {
-  font-size: 16px;
-  font-weight: 600;
-}
-.app-container .wrapper .content .fixed-sidebar .categories-container .categories-wrapper .category-item .info .total_count {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
-}
-.app-container .wrapper .content .logout-container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 116px;
-  background: linear-gradient(339deg, #1b1929 0%, rgba(0, 0, 0, 0) 100%), rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 1rem;
-  margin-top: auto;
-}
-.app-container .wrapper .content .logout-container .video video {
-  border-radius: 16px;
-}
-.app-container .wrapper .content .logout-container .wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-.app-container .wrapper .content .logout-container .wrapper .created_at p {
-  color: var(--transparent-3, rgba(255, 255, 255, 0.5));
-}
-.app-container .wrapper .content .logout-container .wrapper .created_at .date {
-  display: block;
-  color: var(--white, #fff);
-  font-family: Lato;
-  font-size: 16px;
-  font-weight: 600;
-}
-.app-container .wrapper .content .logout-container .wrapper .logout a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 8px 24px;
-  border: 1px solid var(--transparent-2, rgba(255, 255, 255, 0.13));
-  border-radius: 16px;
 }/*# sourceMappingURL=style.css.map */

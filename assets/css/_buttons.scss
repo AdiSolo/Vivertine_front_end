@@ -1,0 +1,32 @@
+.rounded_btn {
+  display: inline-flex;
+  min-width: fit-content;
+  height: 33px;
+  color: #fff;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  margin-top: 24px;
+  padding: 8px 24px;
+}
+
+.button-link {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4.5px);
+    left: calc(50% - 2px);
+    background-image: url(../images/btn-arrow.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+  }
+}

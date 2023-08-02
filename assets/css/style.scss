@@ -1,8 +1,9 @@
 @import "base";
 @import "main-structure";
-@import "variables";
-@import "buttons";
 @import "elements";
+@import "variables";
+@import "functions";
+@import "buttons";
 
 .app-container {
   .wrapper {
@@ -28,11 +29,6 @@
           height: 100px;
           z-index: 1010; /* higher than header and content */
         }
-        .h2 {
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-        }
         p {
           color: rgba(255, 255, 255, 0.5);
           font-size: 14px;
@@ -41,326 +37,105 @@
       }
       .content-container {
         padding: 1rem 2rem;
-        position: relative; // Add relative positioning for z-index to take effect
-        z-index: 0; // Set z-index lower than the header's and video's to allow the video to show up when content scrolls under the header
-        .content-wrraper {
-          height: calc(100vh - 132px);
-          overflow: hidden;
-          z-index: 2;
-          .wrap-scroll-area {
-            height: 100%;
-            overflow: auto;
-            &::-webkit-scrollbar {
-              display: none;
-            }
-          }
-          .blog-section-container {
-            .slider {
-              .post {
-                display: flex;
-                width: 100%;
-                height: 264px;
-                flex-direction: column;
-                justify-content: center;
-                gap: 16px;
-                border-radius: 16px;
-                background-image: url("/assets/images/post-1.jpeg");
-                background-repeat: no-repeat;
-                background-size: cover;
-                padding: 24px;
-                .details {
-                  display: block;
-                  width: 54%;
-                  .title {
-                    font-size: 25px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: normal;
-                  }
-                  p {
-                    color: rgba(0, 0, 0, 0.4);
-                  }
-                  .btn {
-                    display: flex;
-                    max-width: 139px;
-                    height: 33px;
-                    color: #fff;
-                    font-size: 14px;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #000;
-                    border-radius: 100px;
-                    margin-top: 24px;
-                  }
-                }
-              }
-            }
-          }
-          .calendar-container {
-            margin-top: 32px;
-            .calendar-listings {
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-              .day-separator-container {
-                display: flex;
-                align-items: center;
-                margin: 1rem 0;
-                gap: 8px;
-                .day-separator {
-                  max-width: 65px;
-                  position: relative;
-                  font-size: 12px;
-                  padding: 4px 16px;
-                  color: #fff;
-                  background: rgba(255, 255, 255, 0.06);
-                  border-radius: 100px;
-                }
-                .separator {
-                  display: flex;
-                  width: 100%;
-                  height: 1px;
-                  background: rgba(255, 255, 255, 0.06);
-                }
-              }
-              .class {
-                display: flex;
-
-                color: #fff;
-                min-height: 119px;
-                border-radius: 20px;
-                background: var(--transparent, rgba(255, 255, 255, 0.06));
-                padding: 1rem;
-                cursor: pointer;
-                transition: 0.3s;
-                &:hover {
-                  background: var(--transparent, rgba(255, 255, 255, 0.1));
-                }
-                .date-container {
-                  position: relative;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 1rem;
-                  padding-right: 2rem;
-                  gap: 8px;
-                  &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 1px;
-                    height: 100%;
-                    background: #fff;
-                    opacity: 0.06;
-                  }
-                  .month {
-                    color: var(--transparent-3, rgba(255, 255, 255, 0.5));
-                  }
-                  .date {
-                    font-size: 25px;
-                    font-style: normal;
-                    font-weight: 500;
-                  }
-                }
-                .image {
-                  padding: 0 1rem;
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px;
-                  }
-                }
-                .info {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  margin-right: 1rem;
-                  gap: 8px;
-                  .title {
-                    font-size: 20px;
-                    font-weight: 500;
-                  }
-                  .meta {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 4px;
-                    .label {
-                      position: relative;
-                      font-size: 12px;
-                      display: flex;
-                      align-items: center;
-                      background: rgba(255, 255, 255, 0.06);
-                      border-radius: 8px;
-                      padding: 8px;
-                      gap: 4px;
-                      .icon {
-                        width: 1rem;
-                        height: 1rem;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-repeat: no-repeat;
-                      }
-                    }
-                    .time {
-                      .icon {
-                        background-image: url("../images/clock.svg");
-                      }
-                    }
-                    .instructor {
-                      .photo {
-                        background-image: url("../images/trainer-photo.jpeg");
-                        border-radius: 500px;
-                      }
-                    }
-                    .difficulty {
-                      .icon {
-                        background-image: url("../images/level.svg");
-                      }
-                    }
-                  }
-                }
-                .button-link {
-                  position: relative;
-                  display: block;
-                  width: 32px;
-                  height: 32px;
-                  border-radius: 100px;
-                  background: rgba(255, 255, 255, 0.06);
-                  align-self: center;
-                  margin-left: auto;
-                  &:before {
-                    content: "";
-                    position: absolute;
-                    top: calc(50% - 4.5px);
-                    left: calc(50% - 2px);
-                    background-image: url(../images/btn-arrow.svg);
-                    background-repeat: no-repeat;
-                    width: 32px;
-                    height: 32px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .fixed-sidebar {
-        height: calc(100vh - 132px);
-        display: flex;
-        flex-direction: column;
-        .categories-container {
-          height: 70%;
-
-          .top {
-            display: flex;
-            justify-content: space-between;
-          }
-          .categories-wrapper {
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            border-radius: 16px;
-            background: var(--transparent, rgba(255, 255, 255, 0.06));
-            backdrop-filter: blur(50px);
-            padding: 1rem;
-            gap: 16px;
-            overflow: hidden;
-            .top {
-              font-size: 12px;
-              p {
-                color: rgba(255, 255, 255, 0.5);
-              }
-              a {
-                color: #f6f041;
-              }
-            }
-            .category-item {
-              display: flex;
-              height: 84px;
-              padding: 12px;
-              align-items: center;
-              gap: 8px;
-              border-radius: 16px;
-              background: rgba(255, 255, 255, 0.06);
-              cursor: pointer;
-              transition: 0.3s;
-              &:hover {
-                background: rgba(255, 255, 255, 0.13);
-              }
-              &:hover img {
-                border-radius: 8px;
-              }
-              img {
-                width: 60px;
-                height: 60px;
-                border-radius: 20px;
-                transition: 0.3s;
-              }
-              .info {
-                color: #fff;
-                .name {
-                  font-size: 16px;
-
-                  font-weight: 600;
-                }
-                .total_count {
-                  color: rgba(255, 255, 255, 0.5);
-                  font-size: 12px;
-                }
-              }
-            }
-          }
-        }
-      }
-      .logout-container {
         position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 116px;
-        background: linear-gradient(339deg, #1b1929 0%, rgba(0, 0, 0, 0) 100%),
-          rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        padding: 1rem;
-        margin-top: auto;
-        .video {
-          video {
-            border-radius: 16px;
-          }
-        }
-        .wrapper {
-          display: flex;
-          justify-content: space-between;
-          .created_at {
-            p {
-              color: var(--transparent-3, rgba(255, 255, 255, 0.5));
-            }
-            .date {
-              display: block;
-              color: var(--white, #fff);
-              font-family: Lato;
-              font-size: 16px;
+        z-index: 0;
+        /*  Content Wrapper */
 
-              font-weight: 600;
-            }
-          }
-          .logout {
-            a {
-              color: #fff;
-              font-size: 14px;
-              font-weight: 700;
-              padding: 8px 24px;
-              border: 1px solid var(--transparent-2, rgba(255, 255, 255, 0.13));
+        .blog-section-container {
+          .slider {
+            .post {
+              display: flex;
+              width: 100%;
+              height: 264px;
+              flex-direction: column;
+              justify-content: center;
+              gap: 16px;
               border-radius: 16px;
+              background-image: url("/assets/images/post-1.jpeg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              padding: 24px;
+              .details {
+                display: block;
+                width: 54%;
+
+                p {
+                  color: rgba(0, 0, 0, 0.4);
+                }
+                .rounded_btn {
+                  background-color: #000;
+                }
+              }
             }
           }
         }
+        /* Calendar Home Container */
+        .calendar-container {
+          margin-top: 32px;
+          .calendar-listings {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .card.class {
+              min-height: 119px;
+              border-radius: 20px;
+            }
+          }
+        }
+        /* End Calendar Home Container */
+
+        /* End Content Wrapper */
+
+        /* Live sesions Page CSS */
+        .list-live-sessions {
+          // .large-size {
+          //   display: flex;
+          //   flex-wrap: wrap;
+          //   .sesion-container {
+          //     display: flex;
+          //     border-radius: 16px;
+          //     height: 427px;
+          //     background: rgba(255, 255, 255, 0.06);
+          //     .column-1 {
+          //       flex-basis: 66.6%;
+          //     }
+          //     .column-2 {
+          //       flex-basis: 33.3%;
+
+          //       padding-left: 16px;
+          //     }
+          //     .media {
+          //       img {
+          //         width: 100%;
+          //         height: 427px;
+          //         border-radius: 16px 0 0 16px;
+          //       }
+          //     }
+          //     .info-data {
+          //       display: flex;
+          //       flex-direction: column;
+          //       color: #fff;
+          //       height: 427px;
+          //       padding: 24px;
+          //       p {
+          //         color: $transparent;
+          //       }
+          //       .meta {
+          //         padding: 24px 0;
+          //       }
+          //       .rounded_btn {
+          //         display: inline-flex;
+          //         max-width: 141px;
+          //         align-self: self-end;
+          //         margin-top: auto;
+          //         background-color: #000;
+          //       }
+          //     }
+          //   }
+          // }
+        }
+        /* Live sesions Page CSS */
       }
     }
   }
