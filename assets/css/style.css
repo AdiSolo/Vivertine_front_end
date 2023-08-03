@@ -5,7 +5,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.4;
+  line-height: normal;
 }
 
 a {
@@ -343,6 +343,30 @@ body {
   background: radial-gradient(96.52% 74.95% at 0% 0%, rgba(253, 184, 21, 0.4) 0%, rgba(253, 184, 21, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #262439;
 }
 
+.content.faq {
+  background: radial-gradient(96.52% 74.95% at 0% 0%, rgba(113, 181, 62, 0.4) 0%, rgba(113, 181, 62, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #262439;
+}
+
+.content.categories {
+  background: radial-gradient(96.52% 74.95% at 0% 0%, rgba(0, 147, 212, 0.4) 0%, rgba(0, 147, 212, 0.01) 96.35%, rgba(253, 184, 21, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #262439;
+}
+
+.content.single {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #262439;
+}
+.content.single .content-container {
+  padding: 0 !important;
+}
+.content.single .content-container iframe {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  border: none;
+}
+.content.single .content-container .list-items {
+  padding: 0 24px;
+}
+
 .content-wrraper {
   height: calc(100vh - 132px);
   overflow: hidden;
@@ -477,6 +501,7 @@ body {
   color: #fff;
   background: var(--transparent, rgba(255, 255, 255, 0.06));
   padding: 1rem;
+  border-radius: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -529,6 +554,12 @@ body {
   margin-right: 1rem;
   gap: 8px;
 }
+.card .info .title {
+  color: inherit;
+}
+.card .info p {
+  color: rgba(255, 255, 255, 0.5);
+}
 .card .button-link {
   align-self: center;
   margin-left: auto;
@@ -560,12 +591,18 @@ body {
   display: flex;
 }
 
+.card.small.padding .image {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
 .card.large {
   max-height: 427px;
   padding: 0;
   border-radius: 16px;
 }
 .card.large .image {
+  position: relative;
   flex-basis: 66.6%;
   padding: 0;
 }
@@ -573,6 +610,11 @@ body {
   width: 100%;
   height: 427px;
   border-radius: 16px 0 0 16px;
+}
+.card.large .image .live-label {
+  position: absolute;
+  right: 24px;
+  top: 24px;
 }
 .card.large .info {
   flex-basis: 33.3%;
@@ -598,6 +640,46 @@ body {
   align-self: self-end;
   margin-top: auto;
   background-color: #000;
+}
+
+.live-label {
+  position: relative;
+  display: inline-flex;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-height: 22px;
+  font-size: 12px;
+  background: #ef2d03;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.live-label::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  top: 9px;
+  left: 2px;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  margin-bottom: 24px;
+}
+.filters a {
+  height: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0;
+}
+.filters a.active {
+  color: #000;
+  background: #fff;
 }
 
 /* Colors */
@@ -668,9 +750,16 @@ body {
   /*  Content Wrapper */
   /* Calendar Home Container */
   /* End Calendar Home Container */
-  /* End Content Wrapper */
   /* Live sesions Page CSS */
-  /* Live sesions Page CSS */
+  /* End Live sesions Page CSS */
+  /* Live sesions Single Page CSS */
+  /* End Live sesions Single Page CSS */
+  /* List Categories Page CSS */
+  /* End List Categories Page CSS */
+  /*  Recorded Classes Page CSS */
+  /* End Recorded Classes Page CSS */
+  /*  FAQ Page CSS */
+  /* End FAQ Page CSS */
 }
 .app-container .wrapper .content .content-container .blog-section-container .slider .post {
   display: flex;
@@ -706,4 +795,53 @@ body {
 .app-container .wrapper .content .content-container .calendar-container .calendar-listings .card.class {
   min-height: 119px;
   border-radius: 20px;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item:hover .title {
+  color: #f6f041;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item:hover .image img {
+  border-radius: 12px;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item a {
+  color: inherit;
+  text-align: center;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item a .image {
+  height: 128px;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item a .image img {
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.app-container .wrapper .content .content-container .categories-list .category-item a .title {
+  padding: 16px;
+}
+.app-container .wrapper .content .content-container .faq-container .card {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.app-container .wrapper .content .content-container .contact .contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.app-container .wrapper .content .content-container .contact .contact-container .contact-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.app-container .wrapper .content .content-container .contact .contact-container .contact-item a {
+  font-size: 14px;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

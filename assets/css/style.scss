@@ -85,57 +85,77 @@
         }
         /* End Calendar Home Container */
 
-        /* End Content Wrapper */
-
         /* Live sesions Page CSS */
-        .list-live-sessions {
-          // .large-size {
-          //   display: flex;
-          //   flex-wrap: wrap;
-          //   .sesion-container {
-          //     display: flex;
-          //     border-radius: 16px;
-          //     height: 427px;
-          //     background: rgba(255, 255, 255, 0.06);
-          //     .column-1 {
-          //       flex-basis: 66.6%;
-          //     }
-          //     .column-2 {
-          //       flex-basis: 33.3%;
 
-          //       padding-left: 16px;
-          //     }
-          //     .media {
-          //       img {
-          //         width: 100%;
-          //         height: 427px;
-          //         border-radius: 16px 0 0 16px;
-          //       }
-          //     }
-          //     .info-data {
-          //       display: flex;
-          //       flex-direction: column;
-          //       color: #fff;
-          //       height: 427px;
-          //       padding: 24px;
-          //       p {
-          //         color: $transparent;
-          //       }
-          //       .meta {
-          //         padding: 24px 0;
-          //       }
-          //       .rounded_btn {
-          //         display: inline-flex;
-          //         max-width: 141px;
-          //         align-self: self-end;
-          //         margin-top: auto;
-          //         background-color: #000;
-          //       }
-          //     }
-          //   }
-          // }
+        /* End Live sesions Page CSS */
+        /* Live sesions Single Page CSS */
+
+        /* End Live sesions Single Page CSS */
+        /* List Categories Page CSS */
+        .categories-list {
+          .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 24px;
+
+            &:hover .title {
+              color: $main-color;
+            }
+            &:hover .image img {
+              border-radius: 12px;
+            }
+            a {
+              color: inherit;
+              text-align: center;
+              .image {
+                height: 128px;
+
+                img {
+                  width: 100%;
+                  border-radius: 20px;
+                  transition: 0.3s;
+                }
+              }
+              .title {
+                padding: 16px;
+              }
+            }
+          }
         }
-        /* Live sesions Page CSS */
+        /* End List Categories Page CSS */
+        /*  Recorded Classes Page CSS */
+        .recorded-classes {
+        }
+        /* End Recorded Classes Page CSS */
+        /*  FAQ Page CSS */
+        .faq-container {
+          .card {
+            padding: 24px;
+            margin-bottom: 24px;
+          }
+        }
+        .contact {
+          .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .contact-item {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              row-gap: 8px;
+              column-gap: 8px;
+              a {
+                font-size: 14px;
+                color: #fff;
+              }
+            }
+          }
+        }
+        /* End FAQ Page CSS */
       }
     }
   }

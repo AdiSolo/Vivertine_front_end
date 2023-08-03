@@ -30,11 +30,11 @@
                   <span class="icon home"></span>
                   <span class="name">Home</span>
                 </a>
-                <a href="#" class="link active">
+                <a href="#" class="link">
                   <span class="icon live"></span>
                   <span class="name">Sesiuni Live</span>
                 </a>
-                <a href="#" class="link bar">
+                <a href="#" class="link active">
                   <span class="icon registered"></span>
                   <span class="name">Clase inregistrate</span>
                 </a>
@@ -53,15 +53,11 @@
             </div>
           </div>
         </div>
-        <div class="content live-page">
+        <div class="content categories recorded-classes">
           <div class="main-header">
             <div class="left">
               <div class="user-welcome">
-                <span class="h1">Antrenamente si sesiuni Live</span>
-                <p>
-                  Suntem ceea ce facem în mod repetat. Excelența nu este un act,
-                  ci un obicei.
-                </p>
+                <span class="h1">Abdomene</span>
               </div>
             </div>
             <div class="right">
@@ -77,63 +73,26 @@
               </div>
             </div>
           </div>
-          <div class="content-container">
-            <div class="content-wrraper">
-              <div
-                class="bootstrap-wrapper list-live-sessions wrap-scroll-area"
-              >
+          <div class="content-container content-wrraper">
+            <div class="wrap-scroll-area">
+              <div class="filters">
+                <a href="#" class="rounded_btn active">Toate clasele</a>
+                <a href="#" class="rounded_btn">Cele mai recente</a>
+              </div>
+              <div class="bootstrap-wrapper">
                 <div class="row">
-                  <div class="col-md-12">
-                    <div class="card large" style="margin-bottom: 20px">
+                  <div class="col-md-4">
+                    <div class="card small padding">
                       <div class="image">
                         <img src="/assets/images/live-placeholder.png" alt="" />
-                        <span class="live-label"> Live acum</span>
                       </div>
                       <div class="info">
-                        <div class="h1 title">Power circuit</div>
-                        <p class="description">
-                          Antrenamentul în circuit reprezintă o serie de
-                          exerciţii care lucrează anduranţa sistemului
-                          cardiovascular, sistemului muscular dar şi forţa.
-                        </p>
-                        <div class="meta">
-                          <div class="label time">
-                            <span class="icon"></span>
-                            11:00 - 14.00
-                          </div>
-                          <div class="label instructor">
-                            <span class="icon photo"></span>
-                            <span>Vasile Tiberiu</span>
-                          </div>
-                          <div class="label difficulty">
-                            <span class="icon"></span>
-
-                            Nivel mediu
-                          </div>
-                        </div>
-                        <a href="./live-sesions-single.html" class="rounded_btn"
-                          >Participa acum</a
+                        <a
+                          href="/pages/recorded-classes-single.html"
+                          class="h2 title"
+                          >Power circuit</a
                         >
-
-                        <div class="button-link">
-                          <span class="link"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="line-separator-container">
-                    <div class="text-label">Alte sesiuni live viitoare</div>
-                    <span class="separator"></span>
-                  </div>
-
-                  <div class="col-md-4 normal-size">
-                    <div class="card small">
-                      <div class="image">
-                        <img src="/assets/images/live-placeholder.png" alt="" />
-                      </div>
-                      <div class="info">
-                        <div class="h2 title">Power circuit</div>
-
+                        <div></div>
                         <div class="flex-wrapper">
                           <div class="meta">
                             <div class="label time">
@@ -146,12 +105,8 @@
                             </div>
                             <div class="label difficulty">
                               <span class="icon"></span>
-
                               Nivel mediu
                             </div>
-                          </div>
-                          <div class="button-link">
-                            <span class="link"></span>
                           </div>
                         </div>
                       </div>
@@ -168,7 +123,7 @@
 </html>
 <script>
   // The number of times to multiply the HTML snippet
-  const multiplier = 5;
+  const multiplier = 6;
 
   // Function to multiply the HTML and add to the container
   function multiplyHTML(var1, var2) {
