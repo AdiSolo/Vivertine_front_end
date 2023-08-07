@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Grid Layout</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 70% 30%;
+      }
+
+      .scroll-div {
+        overflow-y: auto;
+        height: 100vh; /* Full height for the scrollable container */
+      }
+
+      .sidebar1,
+      .sidebar2 {
+        height: 50vh; /* half height */
+      }
+
+      /* Mobile layout */
+      @media (max-width: 768px) {
+        .grid-container {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .scroll-div {
+          height: auto; /* Allow scroll-div to grow */
+          display: contents; /* Enable div1 and div2 to mix with other content */
+        }
+
+        .div1,
+        .div2,
+        .sidebar1,
+        .sidebar2 {
+          height: auto;
+        }
+
+        .div2,
+        .sidebar1,
+        .sidebar2 {
+          order: 1;
+        }
+
+        .sidebar2 {
+          order: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="scroll-div">
+        <div class="div1">
+          Div 1
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+        <div class="div2">
+          Div 2
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+      </div>
+      <div class="sidebar1">
+        Sidebar 1
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </div>
+      <div class="sidebar2">
+        Sidebar 2
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </div>
+    </div>
+  </body>
+</html>

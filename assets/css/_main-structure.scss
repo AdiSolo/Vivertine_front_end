@@ -1,8 +1,11 @@
 @import "variables";
+@import "mixins";
 
-.lock-scroll {
-  height: 100svh;
-  overflow: hidden;
+@include respond-to(large) {
+  .lock-scroll {
+    height: 100svh;
+    overflow: hidden;
+  }
 }
 
 /* Side navigation area */
@@ -15,6 +18,10 @@
   color: #fff;
   background: $background;
   padding: 24px 16px;
+
+  @include respond-to(medium) {
+    display: none;
+  }
 
   .top {
     .logo {
@@ -118,58 +125,97 @@
   flex-basis: calc(100% - 194px);
   height: 100svh;
   overflow: hidden;
+  @include respond-to(medium) {
+    flex-basis: 100%;
+    overflow: auto;
+  }
 
   /* Top bar header */
   .main-header {
     display: flex;
     justify-content: space-between;
     padding: 24px;
-    // .left {
-    // }
+    @include respond-to(medium) {
+      flex-direction: column;
+    }
+    .left {
+      @include respond-to(medium) {
+        order: 2;
+      }
+    }
     .right {
       display: flex;
       max-height: 32px;
       gap: 24px;
-      .time-label {
-        display: flex;
-        font-size: 12px;
-        padding: 8px 16px;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 100px;
-        gap: 8px;
+      @include respond-to(medium) {
+        max-height: none;
+        padding: 16px;
       }
-      .day,
-      .full-time-format {
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .notification {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 500px;
-        .icon {
-          position: relative;
+
+      .logo {
+        display: none;
+        @include respond-to(medium) {
+          flex: 1;
           display: block;
-          width: 12px;
-          height: 14.3px;
-          background-image: url("../images/notification.svg");
-          .count {
-            position: absolute;
-            display: flex;
-            font-weight: 800;
-            justify-content: center;
-            align-items: center;
-            top: -15px;
-            right: -10px;
-            width: 13px;
-            height: 14px;
-            font-size: 8px;
-            background: #f6f041ed;
-            border-radius: 500px;
+        }
+        img {
+          @include respond-to(medium) {
+            height: 40px;
+          }
+        }
+      }
+      .flex-wrapper {
+        flex: 1;
+        display: flex;
+        gap: 24px;
+        @include respond-to(medium) {
+          justify-content: flex-end;
+        }
+
+        .time-label {
+          display: flex;
+          font-size: 12px;
+          padding: 8px 16px;
+          color: #fff;
+          background: rgba(255, 255, 255, 0.06);
+          border-radius: 100px;
+          gap: 8px;
+          @include respond-to(medium) {
+            display: none;
+          }
+        }
+        .day,
+        .full-time-format {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        .notification {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 32px;
+          height: 32px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 500px;
+          .icon {
+            position: relative;
+            display: block;
+            width: 12px;
+            height: 14.3px;
+            background-image: url("../images/notification.svg");
+            .count {
+              position: absolute;
+              display: flex;
+              font-weight: 800;
+              justify-content: center;
+              align-items: center;
+              top: -15px;
+              right: -10px;
+              width: 13px;
+              height: 14px;
+              font-size: 8px;
+              background: #f6f041ed;
+              border-radius: 500px;
+            }
           }
         }
       }
@@ -181,8 +227,15 @@
   height: calc(100vh - 132px);
   display: flex;
   flex-direction: column;
+  @include respond-to(medium) {
+    height: auto;
+    margin-top: 24px;
+  }
   .categories-container {
     height: 70%;
+    @include respond-to(medium) {
+      height: auto;
+    }
 
     .top {
       display: flex;
@@ -245,74 +298,7 @@
     }
   }
 }
-.fixed-sidebar {
-  height: calc(100vh - 132px);
-  display: flex;
-  flex-direction: column;
-  .categories-container {
-    height: 70%;
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-    }
-    .categories-wrapper {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(50px);
-      padding: 1rem;
-      gap: 16px;
-      overflow: hidden;
-      .top {
-        font-size: 12px;
-        p {
-          color: rgba(255, 255, 255, 0.5);
-        }
-        a {
-          color: $main-color;
-        }
-      }
-      .category-item {
-        display: flex;
-        height: 84px;
-        padding: 12px;
-        align-items: center;
-        gap: 8px;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.06);
-        cursor: pointer;
-        transition: 0.3s;
-        &:hover {
-          background: rgba(255, 255, 255, 0.13);
-        }
-        &:hover img {
-          border-radius: 8px;
-        }
-        img {
-          width: 60px;
-          height: 60px;
-          border-radius: 20px;
-          transition: 0.3s;
-        }
-        .info {
-          color: #fff;
-          .name {
-            font-size: 16px;
-
-            font-weight: 600;
-          }
-          .total_count {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 12px;
-          }
-        }
-      }
-    }
-  }
-}
 /* Video section styles */
 .content.video {
   background: linear-gradient(360deg, #1b1929 38%, rgba(0, 0, 0, 0) 100%);
@@ -326,6 +312,9 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
+      @include respond-to(medium) {
+        height: 160%;
+      }
     }
   }
 }
@@ -381,15 +370,19 @@
   }
 }
 
-.content-wrraper {
+.content-wrapper {
   height: calc(100vh - 132px);
   overflow: hidden;
   z-index: 2;
-  .wrap-scroll-area {
-    height: 100%;
+  @include respond-to(medium) {
+    height: auto;
     overflow: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  }
+}
+.wrap-scroll-area {
+  height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
